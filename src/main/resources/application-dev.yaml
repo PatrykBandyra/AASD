@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/sigma_api?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false"
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+server:
+  port: 8000
+  tomcat:
+    max-swallow-size: 100MB
+
+sigma:
+  root-url: "/api"
+  jwt:
+    expiration-in-seconds: 3600
